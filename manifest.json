@@ -1,0 +1,47 @@
+{
+  "name": "Butterfly, Buddy!",
+  "version": "4.0.1",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "activeTab",
+    "history",
+    "scripting",
+    "tabs",
+    "idle",
+    "webNavigation",
+    "downloads"
+  ],
+  "optional_permissions": [ 
+    "notifications"
+  ],
+  "web_accessible_resources": [{
+    "resources": ["data/config.json","js/buddy-script.js","js/timeme.min.js"],
+    "matches": ["*://*/*"],
+    "extension_ids": []
+  }],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "css": ["styles/content.css"],
+      "js": ["js/content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "offline_enabled": true,
+  "action": {
+    "default_title": "Butterfly Buddy",
+    "default_popup": "popup.html"
+  },
+  "icons": {"16": "icons/buddy_icon_16.png",
+			"48": "icons/buddy_icon_48.png",
+			"128": "icons/buddy_icon_128.png",
+			"512": "icons/buddy_icon.png"
+	}
+}
