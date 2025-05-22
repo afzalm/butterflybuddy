@@ -1,47 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>It's Butterfly Buddy!</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butterfly Buddy - Your Safe Web Guide</title>
   <link rel='stylesheet' href='styles/reset.css'>
+  <link rel='stylesheet' href='styles/tailwind.css'>
   <link rel='stylesheet' href='styles/buddy.css'>
-  <link rel='stylesheet' href='styles/jquery.toast.min.css'>
+  <link rel='stylesheet' href='styles/toast.css'>
 </head>
-<body>
-  <header>
-  <p id='welcome'>Hey, <span id="buddy_name"></span>. <span id="greetings"></span></p>
+<body class="bg-gray-100 min-h-screen">
+  <header class="bg-white shadow-md p-4">
+    <div class="container mx-auto">
+      <p id='welcome' class="text-xl font-bold text-gray-900">Hey, <span id="buddy_name"></span>! <span id="greetings"></span></p>
+    </div>
   </header>
   
-<main>
+  <main class="container mx-auto p-4">
+    <div id="search" class="mb-8">
+      <form method="get" action="https://www.google.com/search" target="_blank" class="max-w-2xl mx-auto">
+        <div class="g-search flex gap-2">
+          <input type="text" name="q" class="input flex-1" placeholder="Search the web safely...">
+          <button type="submit" class="btn">Search</button>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Learning Section -->
+    <div class="learning-section mb-8">
+      <h2 class="sub_head text-2xl font-bold mb-6">🌟 Today's Learning Corner</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Word of the Day Card -->
+        <div class="card animate-fade-in">
+          <div class="card-title text-xl font-bold mb-4">📚 Word of the Day</div>
+          <div class="word-of-day text-2xl font-bold mb-2" id="word-of-day">Loading...</div>
+          <div class="word-meaning text-gray-700 mb-2" id="word-meaning"></div>
+          <div class="word-example italic text-gray-600" id="word-example"></div>
+        </div>
+        
+        <!-- World Day Card -->
+        <div class="card animate-fade-in">
+          <div class="card-title text-xl font-bold mb-4">🌍 World Day</div>
+          <div id="world-day-container">
+            <div class="world-day">
+              <div class="world-day-title text-xl font-bold mb-2" id="world-day-title">Loading...</div>
+              <div class="world-day-description text-gray-700" id="world-day-description"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-  <div id="search">
-  <form method="get" action="http://www.google.com/search" target="_blank">
-  <div class="g-search">
-  <table cellpadding="0">
-  <tr>
-    <td><input type="text"   name="q" size="25" maxlength="255" value=""></td>
-    <td><input type="submit" value="Search Google" /></td>
-  </tr>
-  </table>
-  </div>
-
-</main>
-
-<aside>
-<section name="recommended"></section>  
-  <p class="sub_head">Recommeded websites</p>
-  <ul id="recommended" class="links"></ul>
-</section>
-<section>
-  <p class="frequestly_visitied">History</p>
-  <div id="typedUrl_div"></div>
-</section>
-</aside>
-<footer>
-  <p id='info'></p>
-</footer>
-<script src='js/jquery.min.js'></script>
-
-<script src='js/buddy.js'></script>
-<script src='js/jquery.toast.min.js'></script>   
+  <aside class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section class="card">
+        <p class="sub_head text-xl font-bold mb-4">🌟 Recommended Websites</p>
+        <ul id="recommended" class="links space-y-2"></ul>
+      </section>
+      <section class="card">
+        <p class="frequestly_visitied text-xl font-bold mb-4">📚 Your History</p>
+        <div id="typedUrl_div" class="space-y-2"></div>
+      </section>
+    </div>
+  </aside>
+  
+  <footer class="bg-white shadow-md mt-8 p-4">
+    <div class="container mx-auto">
+      <p id='info' class="text-gray-700"></p>
+      <p class="version text-sm text-gray-600 mt-2">Butterfly Buddy v4.0.1 - Your Safe Web Guide</p>
+    </div>
+  </footer>
+  
+  <script src='js/buddy-modern.js' type="module"></script>
+  <script src='js/learning.js'></script>
 </body>
 </html>

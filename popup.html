@@ -4,31 +4,73 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Butterfly - PopUp</title>
+  <title>Butterfly Buddy</title>
   <style>
-    .center {
-      min-height: 100px;
-      min-width: 200px;
-      display: grid;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1ch;
-      background-color: lightseagreen;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 16px;
+      min-width: 250px;
+      background-color: #f8f9fa;
     }
-    .text {
+    
+    h2 {
+      color: #2c3e50;
+      margin-top: 0;
+      text-align: center;
       font-size: 1.2rem;
-      font-weight: bold;
-      color: white;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+    
+    .menu {
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 12px;
+    }
+    
+    .menu a {
+      color: #3498db;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+    
+    .menu a:hover {
+      background-color: #f0f7ff;
+    }
+    
+    .menu a::before {
+      content: "🦋";
+      margin-right: 8px;
+    }
+    
+    .status {
+      font-size: 0.8rem;
+      color: #7f8c8d;
+      text-align: center;
+      margin-top: 12px;
     }
   </style>
 </head>
 <body>
-  <h2>Settings</h2>
-  <div class="center">
-    <a href="butterfly.html"><span class="text">Homepage</span></a><br>
-    <a href="index.html"><span class="text">Web Activity</span></a><br>
-    <a href="options.html"><span class="text">Options</span></a>
+  <h2>Butterfly Buddy</h2>
+  <div class="menu">
+    <a href="butterfly.html" target="_blank">Homepage</a>
+    <a href="options.html" target="_blank">Options</a>
+    <a id="current-site-info" href="#">Site Info</a>
   </div>
+  <div class="status" id="status">Extension active</div>
+  
+  <script src="js/popup.js"></script>
 </body>
 </html>

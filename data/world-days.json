@@ -1,0 +1,54 @@
+{
+  "worldDays": [
+    {
+      "title": "International Day of Education",
+      "description": "Celebrating the role of education in peace and development.",
+      "date": "January 24"
+    },
+    {
+      "title": "World Book Day",
+      "description": "Promoting reading, publishing, and copyright.",
+      "date": "April 23"
+    },
+    {
+      "title": "International Day of Mathematics",
+      "description": "Highlighting the importance of mathematics in our lives.",
+      "date": "March 14"
+    },
+    {
+      "title": "World Science Day",
+      "description": "Promoting science as a tool for peace and development.",
+      "date": "November 10"
+    },
+    {
+      "title": "International Day of Forests",
+      "description": "Raising awareness about the importance of forests.",
+      "date": "March 21"
+    },
+    {
+      "title": "World Water Day",
+      "description": "Focusing on the importance of freshwater.",
+      "date": "March 22"
+    },
+    {
+      "title": "Earth Day",
+      "description": "Demonstrating support for environmental protection.",
+      "date": "April 22"
+    },
+    {
+      "title": "World Environment Day",
+      "description": "Encouraging worldwide awareness and action for the environment.",
+      "date": "June 5"
+    },
+    {
+      "title": "International Literacy Day",
+      "description": "Promoting literacy as a fundamental human right.",
+      "date": "September 8"
+    },
+    {
+      "title": "World Teachers' Day",
+      "description": "Celebrating the vital role of teachers in education.",
+      "date": "October 5"
+    }
+  ]
+} 

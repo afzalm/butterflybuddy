@@ -1,0 +1,24 @@
+{
+    "username": "afzalm",
+    "school_name" : "The_Oxford_School",
+    "class_id" : "7B",
+    "allowed_websites" : {
+        "Britanica" : "https://www.britannica.com",
+        "EduCore" : "https://nimsuae.educore.guru",
+        "Google Earth" : "https://earth.google.com",
+        "Google Classroom" :"https://classroom.google.com",
+        "National Geographic" : "https://nationalgeographic.com",
+        "The Hindu" : "https://thehindu.com"
+},
+    "blocked_websites" : [
+        "https://www.kerala.com",
+        "https://www.cyberiaindica.com",
+        "https://www.rediff.com"
+    ],
+    "controlled_sites" : [
+        "https://www.facebook.com",
+        "https://twitter.com",
+        "https://www.oxford.com"
+    ],
+    "controlled_sites_daily_max_time" : "1000"
+}
