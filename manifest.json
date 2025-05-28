@@ -43,9 +43,12 @@
     "default_title": "Butterfly Buddy",
     "default_popup": "popup.html"
   },
+  "chrome_url_overrides": {
+    "newtab": "butterfly.html"
+  },
   "icons": {"16": "icons/buddy_icon_16.png",
-			"48": "icons/buddy_icon_48.png",
-			"128": "icons/buddy_icon_128.png",
-			"512": "icons/buddy_icon.png"
-	}
+                        "48": "icons/buddy_icon_48.png",
+                        "128": "icons/buddy_icon_128.png",
+                        "512": "icons/buddy_icon.png"
+        }
 }
