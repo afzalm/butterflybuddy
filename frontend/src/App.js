@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import AuthProvider, { useAuth } from './contexts/AuthContext';
-import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import Students from './components/Students';
-import Policies from './components/Policies';
-import Analytics from './components/Analytics';
 import Layout from './components/Layout';
+
+// Lazy load route components
+const Login = lazy(() => import('./components/Login'));
+const Register = lazy(() => import('./components/Register'));
+const Dashboard = lazy(() => import('./components/Dashboard'));
+const Students = lazy(() => import('./components/Students'));
+const Policies = lazy(() => import('./components/Policies'));
+const Analytics = lazy(() => import('./components/Analytics'));
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -26,10 +28,11 @@ function App() {
       <Router>
         <div className="min-h-screen bg-gray-50">
           <Toaster position="top-right" />
-          <Routes>
-            <Route path="/login" element={
-              <PublicRoute>
-                <Login />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/login" element={
+                <PublicRoute>
+                  <Login />
               </PublicRoute>
             } />
             <Route path="/register" element={
@@ -49,7 +52,8 @@ function App() {
               <Route path="analytics" element={<Analytics />} />
             </Route>
             <Route path="*" element={<Navigate to="/dashboard" />} />
-          </Routes>
+            </Routes>
+          </Suspense>
         </div>
       </Router>
     </AuthProvider>
